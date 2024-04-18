@@ -25,13 +25,13 @@ public class CanelauserController {
     @Autowired
     private Canelauser_repository canelauser_repository;
 
-    @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8094"})
+    @CrossOrigin
     @GetMapping("/getUsers")
     public Iterable<canelauser> getAllCanelaUsers(){
         return canelauserService.getAllCanelaUsers();
     }
 
-    @CrossOrigin(origins = {"*"})
+    @CrossOrigin
     @PostMapping("/usuarios")
     public ResponseEntity<?> postCreateCanelaUser(@RequestBody canelauser c){
         try {
